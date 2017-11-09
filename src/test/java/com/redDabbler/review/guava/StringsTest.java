@@ -23,6 +23,10 @@ public class StringsTest {
         System.out.println(Strings.padEnd("123", 10, '0'));
         // 重复字符串
         System.out.println(Strings.repeat("233", 2));
+        // 提取相同的前缀
+        System.out.println(Strings.commonPrefix("122233","1223"));
+        // 提取相同的后缀
+        System.out.println(Strings.commonSuffix("122233","1223"));
     }
 
     @Test
