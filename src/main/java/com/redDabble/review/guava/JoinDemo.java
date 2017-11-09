@@ -1,4 +1,4 @@
-package com.redDabble.guava;
+package com.redDabble.review.guava;
 
 
 import java.io.IOException;
@@ -12,15 +12,14 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 public class JoinDemo {
 
-    public <A extends Appendable> A appendTo(A appendable,Iterable<Integer> parts) throws IOException {
+    public <A extends Appendable> A appendTo(A appendable, Iterable<Integer> parts) throws IOException {
         return null;
     }
 
-    public <A extends Appendable> A appendTo(A appendable,Iterator<Integer> parts) throws IOException {
+    public <A extends Appendable> A appendTo(A appendable, Iterator<Integer> parts) throws IOException {
 
         return null;
     }
-
 
 
     private static Iterable<Object> iterable(final Object first, final Object second, final Object[] rest) {
@@ -28,7 +27,7 @@ public class JoinDemo {
         return new AbstractList<Object>() {
             @Override
             public int size() {
-                return rest.length+2;
+                return rest.length + 2;
             }
 
             @Override
