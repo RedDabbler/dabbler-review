@@ -1,6 +1,3 @@
-/**
- * Created by whh on 2017/11/9.
- */
 package com.redDabble.review.pattern.wrapper;
 
 //包装模式

@@ -7,9 +7,6 @@ import java.util.Iterator;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-/**
- * Created by whh on 2017/8/2.
- */
 public class JoinDemo {
 
     public <A extends Appendable> A appendTo(A appendable, Iterable<Integer> parts) throws IOException {
