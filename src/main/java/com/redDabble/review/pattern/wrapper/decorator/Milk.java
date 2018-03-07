@@ -3,7 +3,6 @@ package com.redDabble.review.pattern.wrapper.decorator;
 import com.redDabble.review.pattern.wrapper.Drink;
 
 /**  装饰 饮料
- * Created by whh on 2017/11/9.
  */
 public class Milk extends Decorator {
     private Drink drink;
