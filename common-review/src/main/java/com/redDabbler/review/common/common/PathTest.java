@@ -7,7 +7,6 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
 public class PathTest {
-
     // Path 是1.7 引入的接口
     @Test
     public void testResolve(){
@@ -22,4 +21,6 @@ public class PathTest {
         System.out.println("path-filename:"+path1.getFileName());
         System.out.println("path-root:"+path1.getRoot());
     }
+
+
 }
