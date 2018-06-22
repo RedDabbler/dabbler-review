@@ -2,6 +2,9 @@ package com.dabbler.scala.functionobject
 
 /**
   * 可以把函数写成匿名的字面量，并把它们作为值传递
+  * 函数值是对象，可以将它存入变量
+  * 任何函数值都是某个扩展了scala包里FunctionN特质之一的类的实例
+  * 如Function0是没有参数的函数，Function1是有一个参数的函数，每个FunctionN特质有一个apply方法用来调用函数
   */
 class firstClassFunction {
 
@@ -9,8 +12,8 @@ class firstClassFunction {
     * 函数字面量被编译进类，在运行实例化化为函数值
     * 函数字面量和值的区别：函数字面量存在源代码，函数值作为对象 存在于运行期，这个区别很想类和对象之间的关系
     * => 指明这个函数把左边的东西（任何整数x）转变为右边的东西（x+1）
-    *  任何函数值都是某个扩展了scala包里FunctionN特质之一的类的实例
-    *  如Function0是没有参数的函数，Function1是有一个参数的函数，每个FunctionN特质有一个apply方法用来调用函数
+    *
+    *
     */
   var increase = (x:Int)=>x+1
 
