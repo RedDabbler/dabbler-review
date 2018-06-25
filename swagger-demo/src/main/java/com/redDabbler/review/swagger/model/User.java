@@ -1,9 +1,15 @@
 package com.redDabbler.review.swagger.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class User {
 
+    // 指定 实体的注释
+    @ApiModelProperty(notes = "用户id")
     private Long id;
+    @ApiModelProperty(notes = "用户姓名")
     private String name;
+    @ApiModelProperty(notes = "用户年龄")
     private Integer age;
 
     public Long getId() {

@@ -8,6 +8,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/test")
+// 指定Controller描述API
 @Api(value = "test",description = "处理user的数据")
 public class HelloController {
 
@@ -22,7 +23,7 @@ public class HelloController {
 
     @ApiOperation(value="创建用户", notes="")
     @RequestMapping(value="/user", method=RequestMethod.POST)
-    @ApiImplicitParam(name="user" ,value = "用户详细实体user",dataTypeClass = User.class)
+    @ApiImplicitParam(name="user" ,value = "用户详细实体user",dataType = "User")
     public String postUser(@RequestBody User user) {
         users.put(user.getId(), user);
         return "success";
