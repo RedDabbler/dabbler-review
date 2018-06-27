@@ -1,13 +1,11 @@
 package com.redDabbler.review.common.cli;
 
-import com.sun.javafx.scene.control.behavior.OptionalBoolean;
 import org.apache.commons.cli.*;
 
-import java.util.List;
 
 public class CliDemo {
 
-    public void handleOptions(String[] args) throws ParseException {
+    public static void handleOptions(String[] args) throws ParseException {
         Options options = new Options();
         options.addOption("t",false,"display current time");
 
@@ -38,7 +36,7 @@ public class CliDemo {
      *   -b, --escape               print octal escapes for nongraphic characters
      *       --block-size=SIZE      use SIZE-byte blocks
      */
-    public  static void handleOption(){
+    public  static void handleOption(String []args){
         // 布尔选项
         Option help = new Option("help","print this message");
         Option projecthelp = new Option("projecthelp","print project help information");
@@ -69,7 +67,6 @@ public class CliDemo {
         options.addOption(logfile);
         options.addOption(logger);
         options.addOption(property);
-        String []args = null;
         CommandLineParser parser = new DefaultParser();
         try {
             CommandLine commandLine = parser.parse(options,args);
@@ -85,13 +82,5 @@ public class CliDemo {
         formatter.printHelp("ant",options,true);
 
     }
-
-    public static void main(String[] args) {
-        handleOption();
-    }
-
-
-
-
 
 }
