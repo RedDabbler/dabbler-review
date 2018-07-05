@@ -1,4 +1,4 @@
-package com.redDabbler.review.common.common;
+package com.redDabbler.review.common.guava;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;

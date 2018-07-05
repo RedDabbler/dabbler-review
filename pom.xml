@@ -19,6 +19,7 @@
         <module>common-review</module>
         <module>learn-scala</module>
         <module>swagger-demo</module>
+        <module>learn-hadoop</module>
     </modules>
 
     <dependencies>

@@ -15,7 +15,7 @@ public class DataSourceHandler {
         opts.addOption("i", true, resourceBundle.getString("HELP_IPADDRESS"));
         opts.addOption("p", true, resourceBundle.getString("HELP_PORT"));
         opts.addOption("t", true, resourceBundle.getString("HELP_PROTOCOL"));
-        BasicParser parser = new BasicParser();
+        CommandLineParser parser = new DefaultParser();
         CommandLine cl;
         try {
             cl = parser.parse(opts, args);
