@@ -20,6 +20,7 @@
         <module>learn-scala</module>
         <module>swagger-demo</module>
         <module>learn-hadoop</module>
+        <module>prometheus-demo</module>
     </modules>
 
     <dependencies>
