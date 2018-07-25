@@ -80,6 +80,11 @@
             <version>${flink.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.ecwid.consul</groupId>
+            <artifactId>consul-api</artifactId>
+            <version>1.4.0</version>
+        </dependency>
 
     </dependencies>
     <build>
