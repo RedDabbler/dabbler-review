@@ -30,12 +30,12 @@ public class ConsulDemo {
         NewService newService = new NewService();
         newService.setName("test_host");
         newService.setAddress("10.10.50.195");
-        newService.setTags(Lists.newArrayList("prometheus-target"));
-        newService.setPort(9100);
-        NewService.Check check = new   NewService.Check();
-        check.setHttp("http://10.10.50.195:9090/metrics");
-        check.setInterval("15s");
-        newService.setCheck(check);
+        newService.setTags(Lists.newArrayList("mysql","prometheus-target"));
+        newService.setPort(9104);
+//        NewService.Check check = new   NewService.Check();
+//        check.setHttp("http://10.10.50.195:9090/metrics");
+//        check.setInterval("15s");
+//        newService.setCheck(check);
         consulClient.agentServiceRegister(newService);
 
     }
