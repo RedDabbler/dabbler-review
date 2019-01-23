@@ -16,7 +16,7 @@ public class DateTest {
 
         System.out.println("dayOfWeek:"+dayOfWeek);
 
-    //    calendar.set(Calendar.DAY_OF_WEEK,-1);
+    //   calendar.set(Calendar.DAY_OF_WEEK,-1);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(simpleDateFormat.format(calendar.getTime()));
 
