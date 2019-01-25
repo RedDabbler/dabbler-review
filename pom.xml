@@ -59,5 +59,23 @@
         <!--</dependency>-->
     </dependencies>
 
-
+    <build>
+        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+        <outputDirectory>${basedir}/target/${project.artifactId}/classes</outputDirectory>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
+        <testOutputDirectory>${basedir}/target/${project.artifactId}/test-classes</testOutputDirectory>
+        <testResources>
+            <testResource>
+                <directory>${basedir}/src/main/resources</directory>
+            </testResource>
+        </testResources>
+    </build>
 </project>
