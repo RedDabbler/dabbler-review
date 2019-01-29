@@ -1,14 +1,13 @@
-import org.junit.Test;
+package com.redDabbler.review.common.jdk;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  */
-public class MatchTest {
+public class MatchDemo {
 
     // matcher 使用
-    @Test
     public void test() {
         Pattern p = Pattern.compile("(\\d+)");
         String s = "123,456-34,345";

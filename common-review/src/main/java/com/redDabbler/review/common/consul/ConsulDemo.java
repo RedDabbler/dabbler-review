@@ -9,7 +9,6 @@ import com.ecwid.consul.v1.agent.model.Service;
 import com.ecwid.consul.v1.health.model.HealthService;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
 
 import java.util.List;
 import java.util.Map;
@@ -17,16 +16,17 @@ import java.util.Map;
 @Slf4j
 public class ConsulDemo {
 
-    ConsulClient consulClient = new ConsulClient("10.10.50.195");
-    @Test
-    public void member(){
+    private void init(){
+        ConsulClient consulClient = new ConsulClient("10.10.50.195");
+    }
 
+
+
+    public void member(ConsulClient consulClient){
         Response<List<Member>> memembers =  consulClient.getAgentMembers();
         log.info("response:{}",memembers);
     }
-
-    @Test
-    public void regerst(){
+    public void regerst(ConsulClient consulClient){
         NewService newService = new NewService();
         newService.setName("test_host");
         newService.setAddress("10.10.50.195");
@@ -40,8 +40,7 @@ public class ConsulDemo {
 
     }
 
-    @Test
-    public void getService(){
+    public void getService(ConsulClient consulClient){
         Response<List<String>> response = consulClient.getCatalogDatacenters();
         log.info("response:{}",response);
         Response<Map<String, Service>> services =consulClient.getAgentServices();

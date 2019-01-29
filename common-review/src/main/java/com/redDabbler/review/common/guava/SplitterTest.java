@@ -1,18 +1,16 @@
 package com.redDabbler.review.common.guava;
 
 import com.google.common.base.Splitter;
-import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by whh on 2017/8/10.
+ *
  */
 public class SplitterTest {
 
-    @Test
     public void testStringSpilt() {
         String testString = "Monday,Tuesday,,Thursday,Friday,,";
         //parts is [Monday, Tuesday, , Thursday,Friday]
@@ -20,7 +18,6 @@ public class SplitterTest {
         print(Arrays.asList(parts));
     }
 
-    @Test
     public void testSplitter() {
         String testString = " Monday,Tuesday, ,Thursday,Friday,,";
         Iterator<String> parts = Splitter.on(",").split(testString).iterator();
@@ -28,7 +25,6 @@ public class SplitterTest {
     }
 
     //trim,对每个截取的字符串做trim处理
-    @Test
     public void testTrimResult() {
         String testString = " Monday,Tuesday, ,Thursday,Friday,,";
         Iterator<String> iterator = Splitter.on(',').trimResults().split(testString).iterator();
@@ -36,7 +32,6 @@ public class SplitterTest {
     }
 
     // 对截取后获得的空字符串做忽略处理
-    @Test
     public void testomitEmptyStrings() {
         String testString = "Monday,Tuesday,,Thursday,Friday,,";
         Iterator<String> iterator = Splitter.on(',').omitEmptyStrings().split(testString).iterator();

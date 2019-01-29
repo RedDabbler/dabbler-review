@@ -1,11 +1,10 @@
-import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package com.redDabbler.review.common.jdk;
 
-public class CastTest {
+import lombok.extern.slf4j.Slf4j;
 
-    Logger LOG = LoggerFactory.getLogger(CastTest.class);
-    @Test
+@Slf4j
+public class CastDemo {
+
     public void test(){
         Object[] values = new Object[3];
         values[0] = 1243;
@@ -20,9 +19,8 @@ public class CastTest {
     /**
      * shift operator
      */
-    @Test
     public void testValue(){
-        LOG.info("2<<2 value:{}",2<<2);
+        log.info("2<<2 value:{}",2<<2);
         System.out.println(2<<2);
         System.out.println(2>>2);
     }

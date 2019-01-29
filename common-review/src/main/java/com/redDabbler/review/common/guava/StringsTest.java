@@ -3,17 +3,12 @@ package com.redDabbler.review.common.guava;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
 
 import java.util.List;
 
-/**
- * Created by whh on 2017/8/14.
- */
 @Slf4j
 public class StringsTest {
 
-    @Test
     public void testStrings() {
         System.out.println(Strings.isNullOrEmpty(null));
         System.out.println(Strings.isNullOrEmpty(""));
@@ -29,7 +24,6 @@ public class StringsTest {
         System.out.println(Strings.commonSuffix("122233","1223"));
     }
 
-    @Test
     public void testLimit() {
         List l = Lists.newArrayList(1, 2, 45, 6, 3, 43, 9);
         List m = Lists.newArrayList(1, 45, 4);

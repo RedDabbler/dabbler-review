@@ -1,6 +1,11 @@
 package com.redDabbler.review.common.mybatis.generator;
 
-import lombok.core.configuration.ConfigurationParser;
+import org.mybatis.generator.api.MyBatisGenerator;
+import org.mybatis.generator.config.Configuration;
+import org.mybatis.generator.config.xml.ConfigurationParser;
+import org.mybatis.generator.exception.InvalidConfigurationException;
+import org.mybatis.generator.exception.XMLParserException;
+import org.mybatis.generator.internal.DefaultShellCallback;
 import sun.nio.cs.Surrogate;
 
 import java.io.IOException;
@@ -10,13 +15,13 @@ import java.util.List;
 
 public class GeneratorDemo {
 
-//    public static void generate() throws InterruptedException, SQLException, IOException, XMLParserException, InvalidConfigurationException {
-//        List<String> warnings = new ArrayList<String>();
-//        boolean overwrite = true;
-//        ConfigurationParser cp = new ConfigurationParser(warnings);
-//        Configuration config = cp.parseConfiguration(Surrogate.Generator.class.getResourceAsStream("/generator/generatorConfig.xml"));
-//        DefaultShellCallback callback = new DefaultShellCallback(overwrite);
-//        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
-//        myBatisGenerator.generate(null);
-//    }
+    public static void generate() throws InterruptedException, SQLException, IOException, XMLParserException, InvalidConfigurationException {
+        List<String> warnings = new ArrayList<String>();
+        boolean overwrite = true;
+        ConfigurationParser cp = new ConfigurationParser(warnings);
+        Configuration config = cp.parseConfiguration(Surrogate.Generator.class.getResourceAsStream("/generator/generatorConfig.xml"));
+        DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+        myBatisGenerator.generate(null);
+    }
 }
