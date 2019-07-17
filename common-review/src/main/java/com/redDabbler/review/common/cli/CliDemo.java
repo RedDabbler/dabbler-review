@@ -2,7 +2,14 @@ package com.redDabbler.review.common.cli;
 
 import org.apache.commons.cli.*;
 
-
+/**
+ * https://commons.apache.org/proper/commons-cli/usage.html
+ *
+ * cli 命令行界面：Command-Line Interface，缩写：CLI
+ *
+ * 利用命令行页面，进行程序操作，可以提供命令提示帮助
+ * 如 DataSourceHandler里 可以根据命令删除数据库
+ */
 public class CliDemo {
 
     public static void handleOptions(String[] args) throws ParseException {

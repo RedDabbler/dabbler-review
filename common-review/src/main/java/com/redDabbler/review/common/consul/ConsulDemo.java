@@ -13,6 +13,11 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * https://book-consul-guide.vnzmi.com/
+ * https://www.consul.io/intro/
+ * 服务发现
+ */
 @Slf4j
 public class ConsulDemo {
 
