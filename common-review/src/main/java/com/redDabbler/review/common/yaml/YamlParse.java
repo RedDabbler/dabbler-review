@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Enumeration;
 
-public class ContextLoaderTest {
+public class YamlParse {
 
-    public void testClassContextLoader(){
+    public void parse(){
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         classLoader.getResource("connect.yml");
         Enumeration<URL> urls = null;
