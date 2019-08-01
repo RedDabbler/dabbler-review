@@ -1,6 +1,6 @@
-package com.redDabbler.review.common.callback.async;
+package com.redDabbler.review.common.pattern.callback.async;
 
-import com.redDabbler.review.common.callback.ICallback;
+import com.redDabbler.review.common.pattern.callback.ICallback;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

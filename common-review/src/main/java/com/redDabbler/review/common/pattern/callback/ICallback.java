@@ -1,4 +1,4 @@
-package com.redDabbler.review.common.callback;
+package com.redDabbler.review.common.pattern.callback;
 
 public interface ICallback {
 
