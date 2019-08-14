@@ -16,5 +16,11 @@ public class Other {
         ParentDemo.staticDefaultTest();
         ParentDemo.staticProtectedTest();
         ParentDemo.staticPublicTest();
+
+        Demo demo = new Demo();
+        demo.protectedTest();
+        demo.publicTest();
+
+
     }
 }

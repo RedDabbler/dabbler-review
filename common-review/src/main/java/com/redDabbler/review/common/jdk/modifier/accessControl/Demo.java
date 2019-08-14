@@ -25,5 +25,7 @@ public class Demo extends ParentDemo{
         parentDemo.publicTest();
         parentDemo.defaultTest();
         parentDemo.protectedTest();
+
+        this.protectedTest();
     }
 }
