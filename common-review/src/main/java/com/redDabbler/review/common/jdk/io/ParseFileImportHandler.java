@@ -5,6 +5,9 @@ import com.redDabbler.template.tools.utils.FileHelper;
 
 import java.io.*;
 
+/**
+ * BufferedReader
+ */
 public class ParseFileImportHandler {
 
 
