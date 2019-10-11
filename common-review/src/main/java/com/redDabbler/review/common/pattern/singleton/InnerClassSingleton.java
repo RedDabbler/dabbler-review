@@ -12,7 +12,6 @@ package com.redDabbler.review.common.pattern.singleton;
  * 下面的单例利用这种特性，实现延迟加载
  */
 public class InnerClassSingleton {
-    private static InnerClassSingleton singleton;
 
     private InnerClassSingleton(){
     }
