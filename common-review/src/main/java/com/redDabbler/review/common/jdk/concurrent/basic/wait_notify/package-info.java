@@ -1,4 +1,4 @@
-package com.redDabbler.review.common.jdk.concurrent.wait_notify;
+package com.redDabbler.review.common.jdk.concurrent.basic.wait_notify;
 /**
  * wait notify
  *

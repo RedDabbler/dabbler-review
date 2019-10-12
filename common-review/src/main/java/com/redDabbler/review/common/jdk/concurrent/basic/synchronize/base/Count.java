@@ -1,4 +1,4 @@
-package com.redDabbler.review.common.jdk.concurrent.synchronize.base;
+package com.redDabbler.review.common.jdk.concurrent.basic.synchronize.base;
 
 /**
  * 规则3：当多个线程同时访问1个对象时，一个线程访问对象的一个同步方法，其他线程访问对象的同步方法会被阻塞

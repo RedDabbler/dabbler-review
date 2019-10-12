@@ -1,4 +1,4 @@
-package com.redDabbler.review.common.jdk.concurrent.synchronize;
+package com.redDabbler.review.common.jdk.concurrent.basic.synchronize;
 /***
  **   * 基本规则
  *  * 第一条: 当一个线程访问“某对象”的“synchronized方法”或者“synchronized代码块”时，

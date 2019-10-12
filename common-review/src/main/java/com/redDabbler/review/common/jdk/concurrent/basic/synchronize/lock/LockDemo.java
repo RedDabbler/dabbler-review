@@ -1,4 +1,4 @@
-package com.redDabbler.review.common.jdk.concurrent.synchronize.lock;
+package com.redDabbler.review.common.jdk.concurrent.basic.synchronize.lock;
 
 
 public class LockDemo {

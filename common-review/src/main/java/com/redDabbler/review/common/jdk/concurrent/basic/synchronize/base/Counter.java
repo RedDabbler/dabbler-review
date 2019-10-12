@@ -1,4 +1,4 @@
-package com.redDabbler.review.common.jdk.concurrent.synchronize.base;
+package com.redDabbler.review.common.jdk.concurrent.basic.synchronize.base;
 
 import lombok.extern.slf4j.Slf4j;
 
