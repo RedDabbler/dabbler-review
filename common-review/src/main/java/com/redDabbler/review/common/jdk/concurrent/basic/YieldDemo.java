@@ -46,11 +46,11 @@ public class YieldDemo {
     }
 
     public static void main(String[]args){
-        ThreadA threadA = new ThreadA();
-        ThreadA threadA1 = new ThreadA();
-        threadA.start();
-        threadA1.start();
-   //     demo();
+//        ThreadA threadA = new ThreadA();
+//        ThreadA threadA1 = new ThreadA();
+//        threadA.start();
+//        threadA1.start();
+       demo();
     }
 
     public static void demo(){

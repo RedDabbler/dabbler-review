@@ -60,7 +60,7 @@ public class InterruptDemo{
         }
     }
 
-
+//如何正常的停止一个线程
     static class ThreadC extends Thread{
 
         private volatile boolean flag = true;
