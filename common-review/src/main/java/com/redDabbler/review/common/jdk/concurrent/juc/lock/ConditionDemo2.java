@@ -4,8 +4,8 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+// 可以明确指定唤醒的线程
 public class ConditionDemo2 {
-
 
     private static BoundBuffer boundBuffer = new BoundBuffer();
 
