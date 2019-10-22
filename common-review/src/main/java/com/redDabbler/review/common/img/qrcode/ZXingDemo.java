@@ -10,7 +10,9 @@ import com.google.zxing.datamatrix.DataMatrixReader;
 import com.google.zxing.qrcode.QRCodeReader;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+import com.google.zxing.qrcode.decoder.QRCodeDecoderMetaData;
 import com.redDabbler.template.tools.utils.FileHelper;
+import org.apache.commons.math3.linear.MatrixUtils;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageWriter;
@@ -42,14 +44,46 @@ public class ZXingDemo {
         MatrixToImageWriter.writeToStream(bitMatrix,"png",fileOutputStream);
     }
 
+    /**
+     * 用zxing解析图片上的二维码，发现每次都无法解析，提示NotFoundException，
+     * 但在http://zxing.org/w/decode.jspx这里却可以正常解析，于是开始各种搜索。
+     *
+     * stackoverflow上找到几种解决方案：
+     *
+     * 修改参数：hints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);--失败
+     * 把图片变成黑白纯色图片--可行
+     * 于是发现zxing对彩色的二维码解码能力偏弱。
+     *
+     *
+     *
+     * 如果把图片转换成yuv图像，则解码能力会有所提高。
+     * @param path
+     * @throws IOException
+     * @throws Exception
+     */
     public static void read(String path)throws IOException,Exception{
-
         File file = new File(path);
         BufferedImage bufferedImage = ImageReader.readImage(file.toURI());
+//        BufferedImage binarized = new BufferedImage(bufferedImage.getWidth(), bufferedImage.getHeight(),BufferedImage.TYPE_BYTE_BINARY);
+//
+//        Graphics g=binarized.createGraphics();
+//        g.setColor(Color.BLACK);
+//        g.drawImage(bufferedImage,0,0,null);
+//
+//        ImageIO.write(binarized,"jpg",new File("E:\\m.jpg"));
+
         LuminanceSource luminanceSource = new BufferedImageLuminanceSource(bufferedImage);
         Binarizer binarizer = new HybridBinarizer(luminanceSource);
         MultiFormatReader reader = new MultiFormatReader();
-        Result result = reader.decode(new BinaryBitmap(binarizer));
+        // 设置二维码的参数
+        HashMap hints = new HashMap();
+
+//
+        hints.put(DecodeHintType.CHARACTER_SET, "utf-8");
+        hints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
+        hints.put(DecodeHintType.PURE_BARCODE, Boolean.TRUE);
+    //    hints.put(DecodeHintType.POSSIBLE_FORMATS, BarcodeFormat.QR_CODE);
+        Result result = reader.decode(new BinaryBitmap(binarizer),hints);
         String text = result.getText();
         System.out.println(text);
 
@@ -61,13 +95,14 @@ public class ZXingDemo {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix =  qrCodeWriter.encode(content,BarcodeFormat.QR_CODE,330,330);
 
-        // 定义二维码图片，并将位图矩阵点渲染到二维码图片上
-        BufferedImage image = new BufferedImage(300, 300, BufferedImage.TYPE_INT_RGB);
-        for (int x = 0; x < 300; x++) {
-            for (int y = 0; y < 300; y++) {
-                image.setRGB(x, y, bitMatrix.get(x, y) ? 0xFF000000 : 0xFFFFFFFF);
-            }
-        }
+        BufferedImage image =  MatrixToImageWriter.toBufferedImage(bitMatrix);
+//        // 定义二维码图片，并将位图矩阵点渲染到二维码图片上
+//        BufferedImage image = new BufferedImage(300, 300, BufferedImage.TYPE_INT_RGB);
+//        for (int x = 0; x < 300; x++) {
+//            for (int y = 0; y < 300; y++) {
+//                image.setRGB(x, y, bitMatrix.get(x, y) ? 0xFF000000 : 0xFFFFFFFF);
+//            }
+//        }
 
         File file = new File(logoPath);
         BufferedImage logo = ImageIO.read(file);
@@ -104,9 +139,11 @@ public class ZXingDemo {
 
     public static void main(String[]args)throws Exception{
 
-        createLogoQrImg("java是世界上最好的语言","E://下载.jpg","E://demo/logo_qrcode.jpg");
+       //createLogoQrImg("java是世界上最好的语言","E://下载.jpg","E://demo/logo_qrcode.png");
 
-        generateQRcodeLogoRemark("hello,world","D://20191022112146.jpg");
+       // generateQRcodeLogoRemark("hello,world","D://20191022112146.jpg");
+
+       read("E://demo/logo_qrcode.png");
     }
 
 
