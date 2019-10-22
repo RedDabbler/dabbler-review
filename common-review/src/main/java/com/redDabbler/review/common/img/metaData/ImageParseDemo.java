@@ -1,4 +1,4 @@
-package com.redDabbler.review.common.metadata;
+package com.redDabbler.review.common.img.metaData;
 
 import com.drew.imaging.ImageMetadataReader;
 import com.drew.imaging.ImageProcessingException;
