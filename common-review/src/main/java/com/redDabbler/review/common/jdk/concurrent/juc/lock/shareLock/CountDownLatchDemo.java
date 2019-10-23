@@ -13,7 +13,6 @@ import java.util.concurrent.CountDownLatch;
  * 必须有count个线程调用countDown()之后，“锁计数器”才为0，而前面提到的等待线程才能继续运行！
  *
  *
- * // 使当前线程在锁存器倒计数至零之前一直等待，除非线程被中断。
  * void await()
  */
 public class CountDownLatchDemo {
