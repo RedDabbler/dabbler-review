@@ -1,10 +1,10 @@
-package com.redDabbler.review.common.jdk.concurrent.juc.lock.shareLock;
+package com.redDabbler.review.common.jdk.concurrent.juc.lock.reentrantLock;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- * CyclicBarrier 它是通过独占锁实现的。
+ * CyclicBarrier 它是通过ReentrantLock(独占锁)和Condition实现的。
  */
 public class CyclicBarrierDemo {
 

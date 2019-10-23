@@ -1,8 +1,11 @@
-package com.redDabbler.review.common.jdk.concurrent.juc.lock.shareLock;
+package com.redDabbler.review.common.jdk.concurrent.juc.lock.reentrantLock;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ * CyclicBarrier一般用于一组线程互相等待至某个状态，然后这一组线程再同时执行；
+ */
 public class CyclicBarrierDemo2 {
 
     private static int size = 5;

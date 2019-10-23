@@ -4,6 +4,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * CountDownLatch是通过“共享锁”实现的。
+ * CountDownLatch一般用于某个线程A等待若干个其他线程执行完任务之后，它才执行；
  * 在创建CountDownLatch中时，会传递一个int类型参数count，
  * 该参数是“锁计数器”的初始状态，表示该“共享锁”最多能被count给线程同时获取。
  * 当某线程调用该CountDownLatch对象的await()方法时，该线程会等待“共享锁”可用时，
@@ -11,6 +12,7 @@ import java.util.concurrent.CountDownLatch;
  * 而“锁计数器”的初始值为count，每当一个线程调用该CountDownLatch对象的countDown()方法时，
  * 才将“锁计数器”-1；通过这种方式，
  * 必须有count个线程调用countDown()之后，“锁计数器”才为0，而前面提到的等待线程才能继续运行！
+ *
  *
  *
  * void await()
