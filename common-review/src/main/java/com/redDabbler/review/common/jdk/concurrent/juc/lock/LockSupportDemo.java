@@ -16,7 +16,7 @@ public class LockSupportDemo {
         }
         public void run() {
           System.out.println(Thread.currentThread().getName()+" wakup others");
-        // 唤醒“主线程”
+          // 唤醒“主线程”
           LockSupport.unpark(mainThread);
 
         }
