@@ -7,5 +7,14 @@ package com.redDabbler.review.jdk.concurrent.basic;
  *   join
  *   sleep
  *   interrupt
+ *
+ *   主内存
+ *   本地内存
+ *
+ *   内存屏障
+ *    happens-before
+ *    as-if-serial
+ *
+ *
  **
  **/
