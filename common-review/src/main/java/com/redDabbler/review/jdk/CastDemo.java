@@ -1,6 +1,8 @@
 package com.redDabbler.review.jdk;
 
 
+import java.math.BigDecimal;
+
 public class CastDemo {
 
     public static void test(){
@@ -28,6 +30,18 @@ public class CastDemo {
     public static void  main(String[]args){
 
      //   testValue();
-        test();
+     //   test();
+
+        testConvert();
+    }
+
+    public static void testConvert(){
+        BigDecimal bd = new BigDecimal("3.402560103E11");
+
+        String str = bd.toBigInteger().toString();
+        int a = Integer.parseInt(str);
+        System.out.println(a);
+
+
     }
 }
